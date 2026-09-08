@@ -8,6 +8,19 @@ printf("===================================================\n");
 return;
 }
 
+void loading(void){
+int i;
+
+    printf("progresso: [");
+    for(i = 0; i <= 20; i++){
+        Sleep(100);
+        printf("#");
+    }
+
+    printf("] sistema inicializado...\n");
+    return;
+}
+
 struct ferramenta{
 char nome[50];
 int codigo;
@@ -17,7 +30,7 @@ float valor;
 int main()
 {
     int opcao = 0;
-    //struct ferramenta ferramenta;
+    struct ferramenta ferramenta;
 
         printf("iniciando o sistema de ferramentas ...\n");
         printf("\n");
@@ -31,6 +44,10 @@ int main()
         printf("[*] sincronizando dados...");
         Sleep(1000);
 
+        system("cls");
+
+        loading();
+        Sleep(1500);
         system("cls");
 
     do {
@@ -80,12 +97,12 @@ int main()
                 while(getchar() != '\n');
             }
 
-            printf("valor: R$ ");
+            printf("valor: R$");
             scanf("%f", &valor);
             while(getchar() != '\n');
 
             while(valor <= 0){
-                printf("valor invalido, digite novamente: ");
+                printf("valor invalido, digite novamente: R$");
                 scanf("%f", &valor);
                 while(getchar() != '\n');
             }
