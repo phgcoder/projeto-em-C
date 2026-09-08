@@ -48,9 +48,10 @@ int main()
 
         loading();
         Sleep(1500);
-        system("cls");
 
     do {
+        system("cls");
+
         espaco();
         printf("           sistema ferralog - INVENTARIO\n");
         espaco();
@@ -62,6 +63,7 @@ int main()
         printf("(2) consultar ferramenta no setor\n");
         printf("(3) verificar status da ferramenta\n");
         printf("(4) sair do sistema\n");
+        printf("(5) cadastro em lote\n");
         espaco();
 
         printf("digite a opcao desejada: ");
@@ -150,6 +152,25 @@ int main()
         printf("desconectando do banco de dados...\n");
         Sleep(2000);
         printf("<< VOLTE SEMPRE >>\n");
+        break;
+
+    case 5:
+        system("cls");
+        int quantidade, i;
+
+        printf("quantas ferramentas deseja cadastrar? ");
+        scanf("%d", &quantidade);
+
+        if(quantidade <= 0){
+            printf("quantidade invalida\n");
+        }
+        else{
+            for(i = 1; i <= quantidade; i++){
+                printf("digite o valor da ferramenta: ");
+                scanf("%f", &ferramenta.valor);
+            }
+        printf("%.2f\n", ferramenta.valor);
+        }
         break;
 
     default:
